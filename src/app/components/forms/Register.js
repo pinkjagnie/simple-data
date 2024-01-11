@@ -20,6 +20,7 @@ const Register = () => {
   const onSubmit = async (values, actions) => {
     console.log(values);
 
+    const enteredName = values.name;
     const enteredEmail = values.email;
     const enteredPass = values.password;
     const enteredConfirmPass = values.confirmPassword;
@@ -28,6 +29,7 @@ const Register = () => {
 
     try {
       await register(
+        enteredName,
         enteredEmail,
         enteredPass,
         enteredConfirmPass,

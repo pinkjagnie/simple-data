@@ -22,6 +22,7 @@ const RegisterForm = ({ onSubmit }) => {
     >
       {({ isSubmitting }) => (
         <Form className="form-control w-[90%] md:w-[60%] lg:w-[50%] p-6 mx-auto mt-2 mb-14 border-2 border-stone-200 rounded-md bg-stone-200">
+          <CustomInput label="Name" name="name" type="text" />
           <CustomInput label="Email" name="email" type="email" />
           <CustomPasswordInput
             label="Password"

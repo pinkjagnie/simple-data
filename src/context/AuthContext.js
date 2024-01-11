@@ -38,10 +38,14 @@ export function AuthProvider({ children }) {
   }, [token, user]);
 
   const register = useCallback(
-    async (email, password, passwordConfirm, UserIdentificator) => {
-      return await pb
-        .collection("users")
-        .create({ email, password, passwordConfirm, UserIdentificator });
+    async (name, email, password, passwordConfirm, UserIdentificator) => {
+      return await pb.collection("users").create({
+        name,
+        email,
+        password,
+        passwordConfirm,
+        UserIdentificator,
+      });
     },
     []
   );
