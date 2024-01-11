@@ -12,8 +12,11 @@ const Drawer = ({ openDrawer, toggleDrawer }) => {
       <div className="w-[100%]">
         <ul className="menu p-4 w-[100%] min-h-full bg-base-200 text-base-content font-medium px-6">
           <li>
-            <Link href="/" onClick={() => toggleDrawer(openDrawer)}>
-              Some Item 1
+            <Link
+              href="/admin/currency-rate-table"
+              onClick={() => toggleDrawer(openDrawer)}
+            >
+              Currency rate table
             </Link>
           </li>
           <li>
