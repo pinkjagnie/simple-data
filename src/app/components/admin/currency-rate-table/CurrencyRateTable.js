@@ -7,17 +7,31 @@ import SingleCurrencyRow from "./SingleCurrencyRow";
 const CurrencyRateTable = () => {
   const [currencies, setCurrencies] = useState("");
 
-  useEffect(() => {
-    fetch("/api/currency-rate-table", {
+  const getCurrencies = async () => {
+    const response = await fetch("/api/currency-rate-table", {
       headers: {
         "Content-Type": "application/json",
       },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data[0]);
-        setCurrencies(data[0]);
-      });
+    });
+
+    const data = await response.json();
+
+    console.log(data[0]);
+    setCurrencies(data[0]);
+  };
+
+  useEffect(() => {
+    // fetch("/api/currency-rate-table", {
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     console.log(data[0]);
+    //     setCurrencies(data[0]);
+    //   });
+    getCurrencies();
   }, []);
 
   return (
