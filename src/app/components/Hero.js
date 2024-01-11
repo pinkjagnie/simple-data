@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Hero = () => {
   return (
     <div className="hero min-h-screen heroBg">
@@ -10,7 +12,9 @@ const Hero = () => {
             excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
             a id nisi.
           </p>
-          <button className="btn btn-primary">Login</button>
+          <Link href="/login" className="btn btn-primary">
+            Login
+          </Link>
         </div>
       </div>
     </div>
