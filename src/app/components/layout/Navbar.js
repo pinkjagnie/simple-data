@@ -1,8 +1,25 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+
+import { useAuth } from "@/context/AuthContext";
 
 import { TbWorldSearch } from "react-icons/tb";
 
 const Navbar = () => {
+  const [dropDownContent, setDropDownContent] = useState(false);
+  const { user, logout } = useAuth();
+
+  useEffect(() => {
+    if (user) {
+      setDropDownContent(true);
+    } else if (!user) {
+      setDropDownContent(false);
+    }
+  }, [user]);
+
   return (
     <div className="navbar bg-base-300">
       <div className="flex-1">
@@ -34,12 +51,35 @@ const Navbar = () => {
             tabIndex={0}
             className="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-4"
           >
-            <li>
-              <Link href="/login">Login</Link>
-            </li>
-            <li>
-              <Link href="/register">Register</Link>
-            </li>
+            {dropDownContent ? (
+              <>
+                <li>
+                  <div className="avatar font-semibold">
+                    <p className="pr-2">Hello, {user.name}</p>
+                    <div className="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                      <Image
+                        src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                        width={48}
+                        height={48}
+                        alt="user avatar"
+                      />
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <button onClick={logout}>Logout</button>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <Link href="/login">Login</Link>
+                </li>
+                <li>
+                  <Link href="/register">Register</Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </div>
