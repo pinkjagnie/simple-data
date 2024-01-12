@@ -9,7 +9,7 @@ import {
 import { useRouter } from "next/navigation";
 import { useInterval } from "usehooks-ts";
 import PocketBase from "pocketbase";
-import jwtDecode from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 import ms from "ms";
 
 const fiveMinutesInMs = ms("5 minutes");
