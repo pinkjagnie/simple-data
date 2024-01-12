@@ -6,7 +6,6 @@ export async function GET(req, res) {
   try {
     const response = await fetch("http://api.nbp.pl/api/cenyzlota/last/2");
     const prices = await response.json();
-    // console.log(currencies);
 
     return Response.json(prices);
   } catch (error) {

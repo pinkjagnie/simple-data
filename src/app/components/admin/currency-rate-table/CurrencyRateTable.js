@@ -6,8 +6,11 @@ import SingleCurrencyRow from "./SingleCurrencyRow";
 
 const CurrencyRateTable = () => {
   const [currencies, setCurrencies] = useState("");
+  const [loadingMsg, setLoadingMsg] = useState("");
 
   const getCurrencies = async () => {
+    setLoadingMsg("Loading...");
+
     const response = await fetch("/api/currency-rate-table", {
       headers: {
         "Content-Type": "application/json",
@@ -18,19 +21,11 @@ const CurrencyRateTable = () => {
 
     console.log(data[0]);
     setCurrencies(data[0]);
+
+    setLoadingMsg("");
   };
 
   useEffect(() => {
-    // fetch("/api/currency-rate-table", {
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // })
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     console.log(data[0]);
-    //     setCurrencies(data[0]);
-    //   });
     getCurrencies();
   }, []);
 
@@ -75,7 +70,7 @@ const CurrencyRateTable = () => {
         </>
       ) : (
         <p className="font-xl font-bold text-center w-[90%] mx-auto">
-          Ups, something went wrong
+          {loadingMsg}
         </p>
       )}
     </div>

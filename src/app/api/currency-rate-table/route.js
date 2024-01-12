@@ -8,7 +8,6 @@ export async function GET(req, res) {
       "http://api.nbp.pl/api/exchangerates/tables/A"
     );
     const currencies = await response.json();
-    // console.log(currencies);
 
     return Response.json(currencies);
   } catch (error) {
