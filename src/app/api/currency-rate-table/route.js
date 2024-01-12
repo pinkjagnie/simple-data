@@ -5,7 +5,7 @@ export async function GET(req, res) {
 
   try {
     const response = await fetch(
-      "http://api.nbp.pl/api/exchangerates/tables/A/today/"
+      "http://api.nbp.pl/api/exchangerates/tables/A"
     );
     const currencies = await response.json();
     // console.log(currencies);
