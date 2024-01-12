@@ -36,22 +36,32 @@ const GoldStats = () => {
 
       {goldPrices && (
         <div className="stats stats-vertical shadow">
-          <div className="stat">
+          <div className="stat place-items-center">
             <div className="stat-title">Gold price of yesterday</div>
             <div className="stat-value">{goldPrices[0].cena} zł / g</div>
             <div className="stat-desc">{goldPrices[0].data}</div>
           </div>
 
-          <div className="stat">
+          <div className="stat place-items-center">
             <div className="stat-title">Gold price of today</div>
             <div className="stat-value">{goldPrices[1].cena} zł / g</div>
             <div className="stat-desc">{goldPrices[1].data}</div>
           </div>
 
-          <div className="stat">
+          <div className="stat place-items-center">
             <div className="stat-title">Difference</div>
-            <div className="stat-value">{priceDifference} zł / g</div>
-            <div className="stat-desc">
+            <div
+              className={`stat-value ${
+                priceDifference > 0 ? `text-accent` : `text-secondary`
+              }`}
+            >
+              {priceDifference} zł / g
+            </div>
+            <div
+              className={`stat-desc ${
+                priceDifference > 0 ? `text-accent` : `text-secondary`
+              }`}
+            >
               {percentageDifference > 0 ? "↗︎" : "↘︎"} {percentageDifference}%
             </div>
           </div>
