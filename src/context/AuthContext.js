@@ -56,6 +56,7 @@ export function AuthProvider({ children }) {
 
   const logout = useCallback(() => {
     pb.authStore.clear();
+    setUser("");
     router.push("/");
   }, []);
 
