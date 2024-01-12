@@ -20,8 +20,11 @@ const Drawer = ({ openDrawer, toggleDrawer }) => {
             </Link>
           </li>
           <li>
-            <Link href="/" onClick={() => toggleDrawer(openDrawer)}>
-              Some Item 2
+            <Link
+              href="/admin/gold-statistics"
+              onClick={() => toggleDrawer(openDrawer)}
+            >
+              Gold statistics
             </Link>
           </li>
         </ul>

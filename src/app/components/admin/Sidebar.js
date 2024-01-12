@@ -17,7 +17,7 @@ const Sidebar = () => {
             <Link href="/admin/currency-rate-table">Currency rate table</Link>
           </li>
           <li className="pt-4">
-            <a>Sidebar Item 2</a>
+            <Link href="/admin/gold-statistics">Gold statistics</Link>
           </li>
         </ul>
       </div>
