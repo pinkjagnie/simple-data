@@ -48,8 +48,8 @@ const CurrencyRateTable = () => {
               zloty
             </p>
           </div>
-          <div className="overflow-x-auto pt-8 w-auto mx-auto">
-            <table className="xs:table-xs sm:table-sm min-[600px]:table-md lg:table-lg xl:table">
+          <div className="overflow-x-auto pt-8 w-auto mx-auto flex items-center justify-center">
+            <table className="xs:table-xs sm:table-sm min-[600px]:table-md lg:table-lg xl:table-xl text-center">
               {/* head */}
               <thead>
                 <tr>
