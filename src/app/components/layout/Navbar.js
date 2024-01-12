@@ -98,7 +98,9 @@ const Navbar = () => {
                 <>
                   <li onClick={clickHandler}>
                     <div className="avatar font-semibold">
-                      <p className="pr-2">Hello, {user.name}</p>
+                      <p className="pr-2 focus:text-slate-100">
+                        Hello, {user.name}
+                      </p>
                       <div className="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                         <Image
                           src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
@@ -110,16 +112,22 @@ const Navbar = () => {
                     </div>
                   </li>
                   <li onClick={clickHandler}>
-                    <button onClick={logout}>Logout</button>
+                    <button onClick={logout} className="focus:text-slate-100">
+                      Logout
+                    </button>
                   </li>
                 </>
               ) : (
                 <>
                   <li onClick={clickHandler}>
-                    <Link href="/login">Login</Link>
+                    <Link href="/login" className="focus:text-slate-100">
+                      Login
+                    </Link>
                   </li>
                   <li onClick={clickHandler}>
-                    <Link href="/register">Register</Link>
+                    <Link href="/register" className="focus:text-slate-100">
+                      Register
+                    </Link>
                   </li>
                 </>
               )}
