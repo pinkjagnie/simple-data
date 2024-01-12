@@ -31,38 +31,42 @@ const GoldStats = () => {
   }, []);
 
   return (
-    <div>
-      <p>Statistics for gold</p>
+    <div className="pb-6">
+      <p className="w-[90%] mx-auto text-xl font-bold text-center pb-8 lg:pt-20">
+        Statistics for gold
+      </p>
 
       {goldPrices && (
-        <div className="stats stats-vertical shadow">
-          <div className="stat place-items-center">
-            <div className="stat-title">Gold price of yesterday</div>
-            <div className="stat-value">{goldPrices[0].cena} zł / g</div>
-            <div className="stat-desc">{goldPrices[0].data}</div>
-          </div>
-
-          <div className="stat place-items-center">
-            <div className="stat-title">Gold price of today</div>
-            <div className="stat-value">{goldPrices[1].cena} zł / g</div>
-            <div className="stat-desc">{goldPrices[1].data}</div>
-          </div>
-
-          <div className="stat place-items-center">
-            <div className="stat-title">Difference</div>
-            <div
-              className={`stat-value ${
-                priceDifference > 0 ? `text-accent` : `text-secondary`
-              }`}
-            >
-              {priceDifference} zł / g
+        <div className="w-[90%] mx-auto flex items-center justify-center">
+          <div className="stats stats-vertical shadow">
+            <div className="stat place-items-center">
+              <div className="stat-title">Gold price of yesterday</div>
+              <div className="stat-value">{goldPrices[0].cena} zł / g</div>
+              <div className="stat-desc">{goldPrices[0].data}</div>
             </div>
-            <div
-              className={`stat-desc ${
-                priceDifference > 0 ? `text-accent` : `text-secondary`
-              }`}
-            >
-              {percentageDifference > 0 ? "↗︎" : "↘︎"} {percentageDifference}%
+
+            <div className="stat place-items-center">
+              <div className="stat-title">Gold price of today</div>
+              <div className="stat-value">{goldPrices[1].cena} zł / g</div>
+              <div className="stat-desc">{goldPrices[1].data}</div>
+            </div>
+
+            <div className="stat place-items-center">
+              <div className="stat-title">Difference</div>
+              <div
+                className={`stat-value ${
+                  priceDifference > 0 ? `text-accent` : `text-secondary`
+                }`}
+              >
+                {priceDifference} zł / g
+              </div>
+              <div
+                className={`stat-desc ${
+                  priceDifference > 0 ? `text-accent` : `text-secondary`
+                }`}
+              >
+                {percentageDifference > 0 ? "↗︎" : "↘︎"} {percentageDifference}%
+              </div>
             </div>
           </div>
         </div>

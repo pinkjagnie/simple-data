@@ -39,11 +39,11 @@ const CurrencyRateTable = () => {
       {currencies ? (
         <>
           <div className="w-[90%] mx-auto text-center">
-            <p className="font-xl font-bold py-4 lg:pt-14">
+            <p className="text-xl font-bold py-4 lg:pt-14">
               Currency rate for day: {currencies.effectiveDate}
             </p>
             <p>Table number {currencies.no}</p>
-            <p className="font-sm pt-4">
+            <p className="text-sm pt-4">
               Average exchange rates of foreign currencies against the Polish
               zloty
             </p>
